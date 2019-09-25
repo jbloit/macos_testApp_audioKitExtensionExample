@@ -15,6 +15,7 @@ class Conductor {
     var oscillator1 = AKOscillator()
     var oscillator2 = AKOscillator()
     var mixer = AKMixer()
+    var oscillatorGain: JBBooster    // Your own extension AKNode!
     
     init() {
         
@@ -23,12 +24,15 @@ class Conductor {
         
         // Cut the volume in half since we have two oscillators
         mixer.volume = 0.5
-        AudioKit.output = mixer
+        oscillatorGain = JBBooster(mixer)
+        AudioKit.output = oscillatorGain
         do {
             try AudioKit.start()
         } catch {
             AKLog("AudioKit did not start")
         }
+        
+        oscillatorGain.gain = 0.1
 
     }
     
@@ -46,6 +50,10 @@ class Conductor {
             oscillator2.start()
 
         }
-
     }
+    
+    func setGain(_ value: Double){
+        oscillatorGain.gain = value
+    }
+    
 }

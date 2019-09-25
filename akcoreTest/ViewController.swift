@@ -13,7 +13,6 @@ import AudioKitUI
 class ViewController: NSViewController {
     
     let conductor = Conductor.shared
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,5 +29,12 @@ class ViewController: NSViewController {
         conductor.toggleSound()
     }
     
+    @IBAction func sliderChanged(_ sender: NSSlider) {
+        var gainValue = sender.doubleValue
+        gainValue = gainValue / sender.maxValue
+        conductor.setGain(sender.doubleValue)
+    }
+
+
 }
 

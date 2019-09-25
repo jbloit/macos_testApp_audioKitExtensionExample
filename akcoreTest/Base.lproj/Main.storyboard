@@ -711,7 +711,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gwB-Qe-83e">
-                                <rect key="frame" x="180" y="118" width="120" height="32"/>
+                                <rect key="frame" x="180" y="110" width="120" height="47"/>
                                 <buttonCell key="cell" type="push" title="sound toggle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W7X-Ad-qyb">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -720,10 +720,24 @@
                                     <action selector="toggleSoundButton:" target="XfG-lQ-9wD" id="Ul6-Un-aBH"/>
                                 </connections>
                             </button>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rbl-le-CPf">
+                                <rect key="frame" x="130" y="34" width="220" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rbl-le-CPf" secondAttribute="height" multiplier="92:15" id="xBd-Yh-soe"/>
+                                </constraints>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="kQL-J8-klb"/>
+                                <connections>
+                                    <action selector="sliderChanged:" target="XfG-lQ-9wD" id="RfK-RY-Bpq"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="rbl-le-CPf" firstAttribute="top" secondItem="gwB-Qe-83e" secondAttribute="bottom" constant="46" id="0hA-Mg-mMm"/>
                             <constraint firstItem="gwB-Qe-83e" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="3fY-bm-sLK"/>
                             <constraint firstItem="gwB-Qe-83e" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="8EG-hv-c5x"/>
+                            <constraint firstItem="rbl-le-CPf" firstAttribute="height" secondItem="gwB-Qe-83e" secondAttribute="height" id="Vn9-gE-MRs"/>
+                            <constraint firstItem="rbl-le-CPf" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="bDo-fX-x2p"/>
+                            <constraint firstItem="gwB-Qe-83e" firstAttribute="width" secondItem="rbl-le-CPf" secondAttribute="width" multiplier="0.5" id="gmE-lm-9aD"/>
                         </constraints>
                     </view>
                 </viewController>

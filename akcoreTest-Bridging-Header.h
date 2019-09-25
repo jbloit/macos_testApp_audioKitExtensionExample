@@ -8,3 +8,5 @@
 
 #pragma once
 
+#import "JBBoosterDSP.hpp"
+
