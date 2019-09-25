@@ -7,13 +7,17 @@
 //
 
 import Cocoa
+import AudioKit
+import AudioKitUI
 
 class ViewController: NSViewController {
-
+    
+    let conductor = Conductor.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
     }
 
     override var representedObject: Any? {
@@ -22,6 +26,9 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func toggleSoundButton(_ sender: Any) {
+        conductor.toggleSound()
+    }
+    
 }
 
